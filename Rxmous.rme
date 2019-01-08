@@ -1,0 +1,19 @@
+Rxmous is a simple OS/2 DLL for providing screen positions on text screens to
+REXX programs.
+I created it, as the existing REXXmous.dll did not work as expected.
+Probably this was caused by the used programming language VP (Virtual Pascal).
+
+So I took the logic over to C, and it worked without further changes.
+
+The other template was rxdllkit.
+
+Included files:
+Rxmous.rme      This file
+Rxmous.c        source code
+Rxmous.obj      object code (output from wcc386)
+Rxmous.dll      DLL (output from wlink)
+Rxmous.lnk      wlink control file
+Rxmous.map      wlink map output file
+Rxmouscl.cmd    batch file for compile and link
+Rxmoustt.cmd    REXX testfile for Rxmous.dll
+

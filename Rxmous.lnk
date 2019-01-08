@@ -1,0 +1,7 @@
+SYSTEM os2v2_dll initinstance terminstance
+OPTION manyautodata,map
+#   DEBUG all
+EXPORT MousInit
+EXPORT ClickPos
+EXPORT MousClos
+FILE Rxmous
