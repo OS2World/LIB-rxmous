@@ -12,7 +12,7 @@ COMPILE TOOLS
  
 AUTHORS
 ===============
-* Frank Beythien
+* Jan Lambert
 
 LINKS
 ===============
