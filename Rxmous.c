@@ -8,6 +8,7 @@
 //         IBM/RexxLA.org: rxMath.c used as an example for Load/DropFuncs
 
 #define INCL_MOU
+#define INCL_DOSPROCESS
 #include <os2.h>
 #include <stdio.h>
 #include <string.h>
@@ -75,7 +76,7 @@ ULONG MousClos(CHAR *name,  /* Termination Routine */
 {
   USHORT    j;
 
-  if (numargs > 0) {            /* check arguments:if any, something bad may be happening */
+  if (numargs > 0) { /* check arguments:if any, something bad may be happening */
     strlcpy(retstr->strptr, LFUNC_FAILED, 255);
     retstr->strlength = strlen(retstr->strptr);
     return FUNC_FAILED;
@@ -93,7 +94,7 @@ ULONG MousClos(CHAR *name,  /* Termination Routine */
 
 /*-----------  User Functions --------------- */
 
-ULONG ClickPos(CHAR *name,      /* User Routine name */
+ULONG ClickPos(CHAR *name,  /* User Routine name */
         ULONG numargs,      /* Number of arguments */
         RXSTRING args[],    /* Null-terminated RXSTRINGs array*/
         CHAR *queuename,    /* Current external data queue name */
@@ -111,33 +112,67 @@ ULONG ClickPos(CHAR *name,      /* User Routine name */
   CHAR  result[128];
   USHORT  rc;
 
+
+  LONG timedblclick = 0; // time for doubleclick check
+  #define dblclickinterval  400L // msecs to recognize doublclick
+
   waitf = MOU_NOWAIT;
-  rc = MouReadEventQue(mei, pwf, mh);
   result[0] = '\0';
-  if (mei->fs & (MOUSE_BN1_DOWN | MOUSE_BN2_DOWN | MOUSE_BN3_DOWN) ) {
-    utoa(mei->row, row, 10);
-    utoa(mei->col, col, 10);
-    if      (mei->fs & MOUSE_BN1_DOWN) button[0] = '1';
-    else if (mei->fs & MOUSE_BN2_DOWN) button[0] = '2';
-    else if (mei->fs & MOUSE_BN3_DOWN) button[0] = '3';
+  do {
+    if (numargs > 0 ) DosSleep(1);  // with argument test for dblclick
 
-    utoa(mei->time, timest, 10);
-
-    strlcat(result, " ", sizeof(result));
-    strlcat(result, row, sizeof(result));
-    strlcat(result, " ", sizeof(result));
-    strlcat(result, col, sizeof(result));
-    strlcat(result, " ", sizeof(result));
-    strlcat(result, button, sizeof(result));
-    strlcat(result, timest, sizeof(result));
-  } else {
-    waitf = MOU_NOWAIT;
-    while (mei->fs > 0) {   /* until queue empty */
-      rc = MouReadEventQue(mei, pwf, mh);
+    rc = MouReadEventQue(mei, pwf, mh);
+//  if (mei->fs)
+//    printf("BreadQ=%d fs=%d t1=%d t=%d\n",rc, mei->fs, timedblclick, mei->time);
+//    printf("numargs %d \n", numargs );
+    if ( (mei->fs & (MOUSE_BN1_DOWN | MOUSE_BN2_DOWN | MOUSE_BN3_DOWN)) ){
+      utoa(mei->time, timest, 10);
+      utoa(mei->row, row, 10);
+      utoa(mei->col, col, 10);
     }
-    strlcpy(result, "0 0 0 0", sizeof(result));
+    if (mei->fs & MOUSE_BN1_DOWN) {
+      if ('0' == button[0]) {    // start of dbl click ??
+        timedblclick = dblclickinterval;
+        button[0] = '1';
+//      printf("1readQ=%d fs=%d t1=%d t=%d\n",rc, mei->fs, timedblclick, mei->time);
+        if (0 == numargs )   break; // no dblclick test required
+      } else {
+        if (dblclickinterval > timedblclick ) { // doubleclick
+          button[0] = 'D';
+          break;
+        }
+      }
+    } else {
+      if (mei->fs & MOUSE_BN2_DOWN) {
+        button[0] = '2';
+        break;
+      } else if (mei->fs & MOUSE_BN3_DOWN) {
+        button[0] = '3';
+        break;
+      }
+    }
+    timedblclick -= 50;
+    if (timedblclick < 0 ) break;
+  } while (('1' == button[0]) && (dblclickinterval > timedblclick) );
+
+/* clear the que */
+  while (mei->fs) {
+    rc = MouReadEventQue(mei, pwf, mh);
   }
-  strlcpy(retstr->strptr, result, 255);          /*trim string if over default return string length*/
-  retstr->strlength = strlen(retstr->strptr);    /*return actual length*/
-  return FUNC_OK;                                /*successful return code(0)*/
+
+  if ('0' == button[0]) {
+    strlcpy(result, "0 0 0 0", sizeof(result));
+  } else {
+      strlcat(result, " ", sizeof(result));
+      strlcat(result, row, sizeof(result));
+      strlcat(result, " ", sizeof(result));
+      strlcat(result, col, sizeof(result));
+      strlcat(result, " ", sizeof(result));
+      strlcat(result, button, sizeof(result));
+      strlcat(result, timest, sizeof(result));
+  }
+  strlcpy(retstr->strptr, result, 255);        /*trim string if over default */
+                                               /*  return string length */
+  retstr->strlength = strlen(retstr->strptr);  /*return actual length*/
+  return FUNC_OK;                              /*successful return code(0)*/
 }

@@ -1,6 +1,6 @@
 Open Watcom Linker Version 1.9
 Portions Copyright (c) 1985-2002 Sybase, Inc. All Rights Reserved.
-Created on:       18/12/30 09:41:58
+Created on:       19/05/22 13:53:50
 Executable Image: Rxmous.dll
 creating an OS/2 32-bit dynamic link library
 
@@ -25,7 +25,7 @@ Segment                Class          Group          Address         Size
 
 _TEXT16                CODE           AUTO           0001:00000000   00000068
 BEGTEXT                CODE           AUTO           0002:00000000   00000007
-_TEXT                  CODE           AUTO           0002:00000010   00002783
+_TEXT                  CODE           AUTO           0002:00000010   00002993
 _NULL                  BEGDATA        DGROUP         0003:00000000   00000004
 _AFTERNULL             BEGDATA        DGROUP         0003:00000004   00000000
 CONST                  DATA           DGROUP         0003:00000004   0000005c
@@ -41,7 +41,7 @@ TIB                    DATA           DGROUP         0003:00000170   00000000
 TI                     DATA           DGROUP         0003:00000170   00000000
 TIE                    DATA           DGROUP         0003:00000170   00000000
 DATA                   DATA           DGROUP         0003:00000170   00000000
-_BSS                   BSS            DGROUP         0003:00000170   00000834
+_BSS                   BSS            DGROUP         0003:00000170   00000838
 stack                  STACK          DGROUP         0003:000009b0   00000000
 
 
@@ -60,52 +60,52 @@ Module: Rxmous.obj(E:\rxmous\Rxmous.c)
 0002:0000012b  MousClos
 0002:00000201  ClickPos
 0003:00000074+ _mh
-Module: E:\own/lib386/os2\clib3r.lib(thunk)
-0002:00000432* __TNK
-0002:0000041e  __TNC
-Module: E:\own/lib386/os2\clib3r.lib(strlcpy.c)
-0002:00000490  strlcpy_
-Module: E:\own/lib386/os2\clib3r.lib(strlen.c)
-0002:000004e0  strlen_
-Module: E:\own/lib386/os2\clib3r.lib(far16fun)
-0002:000004f4  __Far16Func2
-0002:0000053d* __Far16Func
-0002:0000058b* __Far16Pascal2
-0002:000005d2* __Far16Pascal
-0002:0000061e* __Far16Cdecl2
-0002:0000066c* __Far16Cdecl
-0002:000006bf  __FlatToFar16
-0002:000006c8* __Far16ToFlat
-Module: E:\own/lib386/os2\clib3r.lib(itoa.c)
-0002:000006e0  utoa_
-0002:00000730* itoa_
-Module: E:\own/lib386/os2\clib3r.lib(strlcat.c)
-0002:00000760  strlcat_
-Module: E:\own/lib386/os2\clib3r.lib(dstrt386)
-0002:000007a8  __DLLstart_
-0002:000007a8* __DLLstartw_
-Module: E:\own/lib386/os2\clib3r.lib(stk)
-0002:00000815  __STK
-0002:00000805* __CHK
-0002:00000844* __GRO
-0002:00000834* __STKOVERFLOW_
-Module: E:\own/lib386/os2\clib3r.lib(itsto32.c)
-0002:00000870  __init_threadstksize_
-Module: E:\own/lib386/os2\clib3r.lib(alphabet.c)
+Module: E:\ow19/lib386/os2\clib3r.lib(thunk)
+0002:0000049a* __TNK
+0002:00000486  __TNC
+Module: E:\ow19/lib386/os2\clib3r.lib(strlcpy.c)
+0002:000004f0  strlcpy_
+Module: E:\ow19/lib386/os2\clib3r.lib(strlen.c)
+0002:00000540  strlen_
+Module: E:\ow19/lib386/os2\clib3r.lib(far16fun)
+0002:00000554  __Far16Func2
+0002:0000059d* __Far16Func
+0002:000005eb* __Far16Pascal2
+0002:00000632* __Far16Pascal
+0002:0000067e* __Far16Cdecl2
+0002:000006cc* __Far16Cdecl
+0002:0000071f  __FlatToFar16
+0002:00000728* __Far16ToFlat
+Module: E:\ow19/lib386/os2\clib3r.lib(itoa.c)
+0002:00000740  utoa_
+0002:00000790* itoa_
+Module: E:\ow19/lib386/os2\clib3r.lib(strlcat.c)
+0002:000007c0  strlcat_
+Module: E:\ow19/lib386/os2\clib3r.lib(dstrt386)
+0002:00000808  __DLLstart_
+0002:00000808* __DLLstartw_
+Module: E:\ow19/lib386/os2\clib3r.lib(stk)
+0002:00000875  __STK
+0002:00000865* __CHK
+0002:000008a4* __GRO
+0002:00000894* __STKOVERFLOW_
+Module: E:\ow19/lib386/os2\clib3r.lib(itsto32.c)
+0002:000008d0  __init_threadstksize_
+Module: E:\ow19/lib386/os2\clib3r.lib(alphabet.c)
 0003:00000038  ___Alphabet
-Module: E:\own/lib386/os2\clib3r.lib(dmaino32.c)
-0002:00000880  __LibMain
-Module: E:\own/lib386/os2\clib3r.lib(segdefns)
+Module: E:\ow19/lib386/os2\clib3r.lib(dmaino32.c)
+0002:000008e0  __LibMain
+Module: E:\ow19/lib386/os2\clib3r.lib(segdefns)
 0002:00000003  ___begtext
 0003:00000000* __nullarea
 0003:00000158  __Start_XI
 0003:0000016a  __End_XI
 0003:0000016a  __Start_YI
 0003:00000170  __End_YI
-Module: E:\own/lib386/os2\clib3r.lib(xmsgo32.c)
-0002:00000aa0+ __exit_with_msg_
-0002:00000af0  __fatal_runtime_error_
-Module: E:\own/lib386/os2\clib3r.lib(maino32.c)
+Module: E:\ow19/lib386/os2\clib3r.lib(xmsgo32.c)
+0002:00000b00+ __exit_with_msg_
+0002:00000b50  __fatal_runtime_error_
+Module: E:\ow19/lib386/os2\clib3r.lib(maino32.c)
 0003:00000088  ___FirstThreadData
 0003:0000008c  ___GetThreadPtr
 0003:00000090  __AccessFileH
@@ -116,13 +116,13 @@ Module: E:\own/lib386/os2\clib3r.lib(maino32.c)
 0003:000000a4  __AccessFHeap
 0003:000000a8  __ReleaseNHeap
 0003:000000ac  __ReleaseFHeap
-0002:00000b16  __threadstack_
-0002:00000b1d  __threadid_
-0002:00000b24* __OS2MainInit_
-0002:00000b93  __OS2Init_
-0002:00000bd1  __OS2Fini_
-0002:00000bd9  __shutdown_stack_checking_
-0002:00000bee  __exit_
+0002:00000b76  __threadstack_
+0002:00000b7d  __threadid_
+0002:00000b84* __OS2MainInit_
+0002:00000bf3  __OS2Init_
+0002:00000c31  __OS2Fini_
+0002:00000c39  __shutdown_stack_checking_
+0002:00000c4e  __exit_
 0003:000000b0  __AccessTDList
 0003:000000b4  __ReleaseTDList
 0003:000000b8  ___sig_init_rtn
@@ -131,11 +131,11 @@ Module: E:\own/lib386/os2\clib3r.lib(maino32.c)
 0003:000000c4+ ___process_fini
 0003:00000480  ___Is_DLL
 0003:00000484+ ___saved_CS
-Module: E:\own/lib386/os2\clib3r.lib(lmaino32.c)
-0002:00000c40  LibMain
-Module: E:\own/lib386/os2\clib3r.lib(crwdata)
-0003:0000010c  __osmajor
-0003:0000010d  __osminor
+Module: E:\ow19/lib386/os2\clib3r.lib(lmaino32.c)
+0002:00000ca0  LibMain
+Module: E:\ow19/lib386/os2\clib3r.lib(crwdata)
+0003:0000010a  __osmajor
+0003:0000010b  __osminor
 0003:000000d8  __LpDllName
 0003:000000dc  __LpwCmdLine
 0003:000000e0  __LpwPgmName
@@ -152,135 +152,139 @@ Module: E:\own/lib386/os2\clib3r.lib(crwdata)
 0003:000000fc* __cbyte2
 0003:00000100* __child
 0003:00000106  __Envptr
-0003:0000010a* __Envseg
 0003:00000104  __no87
-0003:0000010e* ___FPE_handler
-Module: E:\own/lib386/os2\clib3r.lib(nfree.c)
-0002:00000c60  _nfree_
-0002:00000c60  free_
+0003:0000010c* ___FPE_handler
+Module: E:\ow19/lib386/os2\clib3r.lib(nfree.c)
+0002:00000cc0  _nfree_
+0002:00000cc0  free_
 0003:00000588  ___MiniHeapFreeRover
-Module: E:\own/lib386/os2\clib3r.lib(initrtns.c)
-0002:00000d80  __InitRtns
-0002:00000dd0  __FiniRtns
-Module: E:\own/lib386/os2\clib3r.lib(mthread.c)
-0002:00000e70+ __CloseSemaphore_
-0002:00000ee0+ __AccessIOB_
-0002:00000ef0+ __ReleaseIOB_
-0002:00000f00+ __AccessFileH_
-0002:00000f10+ __ReleaseFileH_
-0002:00000f20+ __AccessNHeap_
-0002:00000f30+ __ReleaseNHeap_
-0002:00000f40+ __AccessFHeap_
-0002:00000f50+ __ReleaseFHeap_
-0002:00000f60+ __AccessTDList_
-0002:00000f70+ __AccessSemaphore_
-0002:00000fd0+ __ReleaseTDList_
-0002:00000fe0+ __ReleaseSemaphore_
-0002:00001010+ __MultipleThread_
-0002:00001050  __AllocInitThreadData_
-0002:000010a0  __FreeInitThreadData_
-0002:000010b0  __OS2AddThread_
-0002:00001120  __OS2RemoveThread_
-0002:00001170  __InitMultipleThread_
-0003:00000114+ ___AccessSema4
-0003:00000118+ ___ReleaseSema4
-0003:0000011c+ ___CloseSema4
-Module: E:\own/lib386/os2\clib3r.lib(ddgrpo32.c)
-0002:000013d0  __disallow_single_dgroup_
-Module: E:\own/lib386/os2\clib3r.lib(cinit.c)
-0002:00001620  __CommonInit_
+Module: E:\ow19/lib386/os2\clib3r.lib(initrtns.c)
+0002:00000de0  __InitRtns
+0002:00000e30  __FiniRtns
+Module: E:\ow19/lib386/os2\clib3r.lib(mthread.c)
+0002:00000ed0+ __CloseSemaphore_
+0002:00000f40+ __AccessIOB_
+0002:00000f50+ __ReleaseIOB_
+0002:00000f60+ __AccessFileH_
+0002:00000f70+ __ReleaseFileH_
+0002:00000f80+ __AccessNHeap_
+0002:00000f90+ __ReleaseNHeap_
+0002:00000fa0+ __AccessFHeap_
+0002:00000fb0+ __ReleaseFHeap_
+0002:00000fc0+ __AccessTDList_
+0002:00000fd0+ __AccessSemaphore_
+0002:00001030+ __ReleaseTDList_
+0002:00001040+ __ReleaseSemaphore_
+0002:00001070+ __MultipleThread_
+0002:000010b0  __AllocInitThreadData_
+0002:00001100  __FreeInitThreadData_
+0002:00001110  __OS2AddThread_
+0002:00001180  __OS2RemoveThread_
+0002:000011d0  __InitMultipleThread_
+0003:00000110+ ___AccessSema4
+0003:00000114+ ___ReleaseSema4
+0003:00000118+ ___CloseSema4
+Module: E:\ow19/lib386/os2\clib3r.lib(ddgrpo32.c)
+0002:00001430  __disallow_single_dgroup_
+Module: E:\ow19/lib386/os2\clib3r.lib(cinit.c)
+0002:00001680  __CommonInit_
 0003:00000998  ___hmodule
-Module: E:\own/lib386/os2\clib3r.lib(nmalloc.c)
-0002:00001630  _nmalloc_
-0002:00001630  malloc_
-0003:00000120  ___nheapbeg
-0003:00000124  ___MiniHeapRover
-0003:00000128  ___LargestSizeB4MiniHeapRover
-Module: E:\own/lib386/os2\clib3r.lib(atouni.c)
-0002:00001730  _atouni_
-Module: E:\own/lib386/os2\clib3r.lib(trdalloc.c)
-0002:00001770  __InitThreadProcessing_
-0002:00001790  __FiniThreadProcessing_
-0003:0000099c  ___ThreadData
-Module: E:\own/lib386/os2\clib3r.lib(maxthrds.c)
-0003:0000012c  ___MaxThreads
-Module: E:\own/lib386/os2\clib3r.lib(dosseg)
+Module: E:\ow19/lib386/os2\clib3r.lib(nmalloc.c)
+0002:00001690+ _use_os2_high_mem_
+0002:000016c0* _os2lmalloc_
+0002:000016f0* _os2hmalloc_
+0002:00001730  _nmalloc_
+0002:00001730  malloc_
+0003:0000011c  ___nheapbeg
+0003:00000120  ___MiniHeapRover
+0003:00000124  ___LargestSizeB4MiniHeapRover
+0003:0000099c  __os2_use_obj_any
+Module: E:\ow19/lib386/os2\clib3r.lib(atouni.c)
+0002:00001870  _atouni_
+Module: E:\ow19/lib386/os2\clib3r.lib(trdalloc.c)
+0002:000018b0  __InitThreadProcessing_
+0002:000018d0  __FiniThreadProcessing_
+0003:000009a0  ___ThreadData
+Module: E:\ow19/lib386/os2\clib3r.lib(maxthrds.c)
+0003:00000128  ___MaxThreads
+Module: E:\ow19/lib386/os2\clib3r.lib(dosseg)
 0000:00001234  __DOSseg__
-Module: E:\own/lib386/os2\clib3r.lib(enterdb.c)
-0002:000017f0  __EnterWVIDEO_
-0003:00000130+ ___WD_Present
-Module: E:\own/lib386/os2\clib3r.lib(dllmno32.c)
-0002:00001820  DllMain
-Module: E:\own/lib386/os2\clib3r.lib(mem.c)
-0002:00001830  __MemAllocator
-0002:000018e0  __MemFree
-Module: E:\own/lib386/os2\clib3r.lib(trdlist.c)
-0002:00001a70  __GetThreadData_
-0002:00001b80  __ReallocThreadData_
-0002:00001cf0  __AddThreadData_
-0002:00001d70  __RemoveThreadData_
-0002:00001dd0* __ResizeThreadDataList_
-0002:00001e20  __FreeThreadDataList_
-0002:00001e50* __ActiveThreads_
-Module: E:\own/lib386/os2\clib3r.lib(mthrdini.c)
-0002:00001e70  __InitThreadData_
-0003:00000138  ___ThreadDataSize
-Module: E:\own/lib386/os2\clib3r.lib(calloc.c)
-0002:00001e90  calloc_
-Module: E:\own/lib386/os2\clib3r.lib(register.c)
-0002:00001ec0  __initthread_
-0002:00001ed0* _beginthread_
-0002:00001ee0  _endthread_
-0002:00001ef0* __RegisterThreadData_
-Module: E:\own/lib386/os2\clib3r.lib(nheapmin.c)
-0002:00001f40  _nheapshrink_
-0002:00001f40* _nheapmin_
-0002:00001f40* _heapmin_
-0002:00001f40  _heapshrink_
-Module: E:\own/lib386/os2\clib3r.lib(amblksiz.c)
-0003:00000148  __amblksiz
-Module: E:\own/lib386/os2\clib3r.lib(nmemneed.c)
-0002:00002030  __nmemneed_
-Module: E:\own/lib386/os2\clib3r.lib(grownear.c)
-0002:000021a0  __ExpandDGROUP_
-Module: E:\own/lib386/os2\clib3r.lib(thrdmax.c)
-0002:000021c0  __GETMAXTHREADS
-Module: E:\own/lib386/os2\clib3r.lib(libmno32.c)
-0002:000021d0  __dll_initialize_
-Module: E:\own/lib386/os2\clib3r.lib(libterm.c)
-0002:000021e0  __dll_terminate_
-Module: E:\own/lib386/os2\clib3r.lib(nrealloc.c)
-0002:000021f0* _nrealloc_
-0002:000021f0  realloc_
-Module: E:\own/lib386/os2\clib3r.lib(memset.c)
-0002:00002270  memset_
-Module: E:\own/lib386/os2\clib3r.lib(thredo32.c)
-0002:00002330  __CBeginThread_
-0002:000023d0  __CEndThread_
-Module: E:\own/lib386/os2\clib3r.lib(heapen.c)
-0002:000023f0* _heapenable_
+Module: E:\ow19/lib386/os2\clib3r.lib(enterdb.c)
+0002:00001930  __EnterWVIDEO_
+0003:0000012c+ ___WD_Present
+Module: E:\ow19/lib386/os2\clib3r.lib(dllmno32.c)
+0002:00001960  DllMain
+Module: E:\ow19/lib386/os2\clib3r.lib(mem.c)
+0002:00001970  __MemAllocator
+0002:00001a20  __MemFree
+Module: E:\ow19/lib386/os2\clib3r.lib(trdlist.c)
+0002:00001bb0  __GetThreadData_
+0002:00001cc0  __ReallocThreadData_
+0002:00001e30  __AddThreadData_
+0002:00001eb0  __RemoveThreadData_
+0002:00001f10* __ResizeThreadDataList_
+0002:00001f60  __FreeThreadDataList_
+0002:00001f90* __ActiveThreads_
+Module: E:\ow19/lib386/os2\clib3r.lib(mthrdini.c)
+0002:00001fb0  __InitThreadData_
+0003:00000134  ___ThreadDataSize
+Module: E:\ow19/lib386/os2\clib3r.lib(calloc.c)
+0002:00001fd0  calloc_
+Module: E:\ow19/lib386/os2\clib3r.lib(register.c)
+0002:00002000  __initthread_
+0002:00002010* _beginthread_
+0002:00002020  _endthread_
+0002:00002030* __RegisterThreadData_
+Module: E:\ow19/lib386/os2\clib3r.lib(nheapmin.c)
+0002:00002080  _nheapshrink_
+0002:00002080* _nheapmin_
+0002:00002080* _heapmin_
+0002:00002080  _heapshrink_
+Module: E:\ow19/lib386/os2\clib3r.lib(amblksiz.c)
+0003:00000144  __amblksiz
+Module: E:\ow19/lib386/os2\clib3r.lib(grownear.c)
+0002:00002350  __ExpandDGROUP_
+0003:00000148  __os2_obj_any_supported
+Module: E:\ow19/lib386/os2\clib3r.lib(nmemneed.c)
+0002:00002370  __nmemneed_
+Module: E:\ow19/lib386/os2\clib3r.lib(thrdmax.c)
+0002:00002380  __GETMAXTHREADS
+Module: E:\ow19/lib386/os2\clib3r.lib(libmno32.c)
+0002:00002390  __dll_initialize_
+Module: E:\ow19/lib386/os2\clib3r.lib(libterm.c)
+0002:000023a0  __dll_terminate_
+Module: E:\ow19/lib386/os2\clib3r.lib(nrealloc.c)
+0002:000023b0* _nrealloc_
+0002:000023b0  realloc_
+Module: E:\ow19/lib386/os2\clib3r.lib(memset.c)
+0002:00002470  memset_
+Module: E:\ow19/lib386/os2\clib3r.lib(thredo32.c)
+0002:00002530  __CBeginThread_
+0002:000025d0  __CEndThread_
+Module: E:\ow19/lib386/os2\clib3r.lib(heapen.c)
+0002:000025f0* _heapenable_
 0003:0000014c  ___heap_enabled
-Module: E:\own/lib386/os2\clib3r.lib(nmsize.c)
-0002:00002420  _nmsize_
-0002:00002420* _msize_
-Module: E:\own/lib386/os2\clib3r.lib(nexpand.c)
-0002:00002430  _nexpand_
-0002:00002430* _expand_
-0002:00002470+ __HeapManager_expand_
-Module: E:\own/lib386/os2\clib3r.lib(__stos)
-0002:00002630  __STOSB
-0002:00002667* __STOSD
-Module: E:\own/lib386/os2\clib3r.lib(chk8087.c)
-0002:000026e0  _fpreset_
-0002:00002700* __init_8087_
-0002:00002710  __chk8087_
-Module: E:\own/lib386/os2\clib3r.lib(_8087)
+Module: E:\ow19/lib386/os2\clib3r.lib(nmsize.c)
+0002:00002620  _nmsize_
+0002:00002620* _msize_
+Module: E:\ow19/lib386/os2\clib3r.lib(nexpand.c)
+0002:00002630  _nexpand_
+0002:00002630* _expand_
+0002:00002670+ __HeapManager_expand_
+Module: E:\ow19/lib386/os2\clib3r.lib(__stos)
+0002:00002840  __STOSB
+0002:00002877* __STOSD
+Module: E:\ow19/lib386/os2\clib3r.lib(chk8087.c)
+0002:000028f0  _fpreset_
+0002:00002910* __init_8087_
+0002:00002920  __chk8087_
+Module: E:\ow19/lib386/os2\clib3r.lib(_8087)
 0003:00000150  __8087
 0003:00000151  __real87
-Module: E:\own/lib386/os2\clib3r.lib(8087cw.c)
+Module: E:\ow19/lib386/os2\clib3r.lib(8087cw.c)
 0003:00000154  __8087cw
-Module: E:\own/lib386/os2\clib3r.lib(init8087)
-0002:00002760  __x87id
+Module: E:\ow19/lib386/os2\clib3r.lib(init8087)
+0002:00002970  __x87id
 
 
                         +----------------------+
@@ -294,6 +298,7 @@ RexxRegisterFunctionDll             REXXAPI
 MOU16OPEN                           MOUCALLS
 RexxDeregisterFunction              REXXAPI
 MOU16CLOSE                          MOUCALLS
+DosSleep                            DOSCALLS
 MOU16READEVENTQUE                   MOUCALLS
 DosFlatToSel                        DOSCALLS
 DosSelToFlat                        DOSCALLS
@@ -324,9 +329,9 @@ DosDevConfig                        DOSCALLS
                         |   Libraries Used   |
                         +--------------------+
 
-E:\own/lib386/os2\rexx.lib
-E:\own/lib386/os2\clib3r.lib
-E:\own/lib386/os2\os2386.lib
+E:\ow19/lib386/os2\rexx.lib
+E:\ow19/lib386/os2\clib3r.lib
+E:\ow19/lib386/os2\os2386.lib
 
 
                         +-----------------------+
@@ -334,5 +339,5 @@ E:\own/lib386/os2\os2386.lib
                         +-----------------------+
 
 Stack size:  0000 (0.)
-Memory size:  31ab (12715.)
-Link time: 00:00.03
+Memory size:  33bb (13243.)
+Link time: 00:00.11

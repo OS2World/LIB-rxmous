@@ -7,6 +7,21 @@ So I took the logic over to C, and it worked without further changes.
 
 The other template was rxdllkit.
 
+2019-05-22:
+Changes: doubleclick detected and reported optionally
+        call clickpos()    no dblclick detected/reported
+        call clickpos('D') report dblclick
+                           single buttonclick 1 reporting is
+                           delayed for dblclick detection
+
+Return values:
+row column button timestamp
+0 0 0 0        if no button pressed
+6 42 1 1234565 for single button 1 click
+6 42 D 1234567 for button 1 double click (if enabled)
+6 42 2 1234567 button 2
+6 42 3 1234567 button 3
+
 Included files:
 Rxmous.rme      This file
 Rxmous.c        source code
@@ -15,5 +30,6 @@ Rxmous.dll      DLL (output from wlink)
 Rxmous.lnk      wlink control file
 Rxmous.map      wlink map output file
 Rxmouscl.cmd    batch file for compile and link
-Rxmoustt.cmd    REXX testfile for Rxmous.dll
 
+Rxmoustd.cmd    REXX testfile for Rxmous.dll with doubleclick
+Rxmoustt.cmd    REXX testfile for Rxmous.dll without doublclick
